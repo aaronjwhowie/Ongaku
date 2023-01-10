@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 import Contact from './routes/contact';
 import Home from './routes/home';
 import Product from './routes/product';
-// import Ongaku from '../public/Images/ongaku-logo.png'
 import Footer from './components/footer';
 function App() {
   return (
