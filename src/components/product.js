@@ -17,7 +17,7 @@ const mysql = require("mysql2");
 const conn = mysql.createConnection({
   host: "127.0.0.1",
   user: "root", // User Name
-  password: "Progress!8413010", // User password
+  password: "*********", // User password
   database: "productData", // Database Name
 });
 
