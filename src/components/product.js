@@ -1,4 +1,3 @@
-const { appendFile } = require("fs");
 const http = require("http");
 // Const mysql = require('mysql');
 // Use these variables to define our port, Hostname
@@ -32,16 +31,6 @@ conn.connect((err) => {
   }
 });
 
-const handleQueryResult = (err, results, res) => {
-  if (err) {
-    console.error(err);
-    return res.status(500).send("Internal server error");
-  }
-  if (results.length === 0) {
-    return res.status(404).send("No results found");
-  }
-  res.status(200).send(results);
-};
 
 app.use(cors());
 app.use(express.json());
@@ -51,7 +40,7 @@ app.get("/", (err, res) => {
   res.send("good");
 });
 
-
+// Product Filters
 app.get("/Products", (req, res) => {
   const sql = "SELECT * FROM products";
   conn.query(sql, (err, results) => {
@@ -68,6 +57,8 @@ app.get("/Keyboards", (req, res) => {
     res.send(results);
   });
 });
+
+
 
 
 app.get("/costASC", (req, res) => {

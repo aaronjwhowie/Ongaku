@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
-import Keyboards from "./keyboards";
 
-class Product extends React.Component {
+class Keyboards extends React.Component {
   state = {
     products: [],
   };
@@ -12,17 +11,19 @@ class Product extends React.Component {
     this.state = { products: [] };
   }
   componentDidMount() {
-    axios.get("http://localhost:3001/Products").then((res) => {
+    axios.get("http://localhost:3001/Keyboards").then((res) => {
       const products = res.data;
       this.setState({ products });
     });
   }
+  
 
  
   render() {
     return (
       <>
-              <div class = "productDisplay">
+      <a href= "http://localhost:3001/Keyboards">keyboards</a>
+        <div class = "productDisplay">
           {this.state.products.map((card) => {
             return (
               <div class = "productContainer">
@@ -56,5 +57,5 @@ class Product extends React.Component {
     );
   }
 }
-export default Product;
+export default Keyboards;
 
